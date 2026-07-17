@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>MyFlix Dashboard</title>
+<style>
+body{
+background:#141414;
+color:white;
+font-family:Arial;
+text-align:center;
+margin:0;
+}
+h1{
+background:red;
+padding:15px;
+margin:0;
+}
+</style>
+</head>
+
+<body>
+
+<h1>🎬 MyFlix Dashboard</h1>
+
+<h2>Upload Video</h2>
+
+<input type="file" id="videoFile" accept="video/*">
+
+<br><br>
+
+<video id="player" width="100%" controls></video>
+
+<script>
+const input = document.getElementById("videoFile");
+const player = document.getElementById("player");
+
+input.addEventListener("change", function () {
+  const file = this.files[0];
+  if (file) {
+    player.src = URL.createObjectURL(file);
+  }
+});
+</script>
+
+</body>
+</html>
